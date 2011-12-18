@@ -1,1 +1,8 @@
+# Fix pageup pagedown
 termcapinfo xterm ti@:te@
+
+# Don't display the copyright page
+startup_message off
+
+# tab-completion flash in heading bar
+vbell off
