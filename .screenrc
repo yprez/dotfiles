@@ -1,7 +1,7 @@
-termcapinfo xterm ti@:te@  #  Fix pageup pagedown
+termcapinfo xterm ti@:te@	# Fix pageup pagedown
 
-autodetach on  # Autodetach session on hangup instead of terminating screen completely
+autodetach on			# Autodetach session on hangup instead of terminating screen completely
 
-startup_message off  # Don't display the copyright page
+startup_message off		# Don't display the copyright page
 
-vbell off  # tab-completion flash in heading bar
+vbell off			# tab-completion flash in heading bar
