@@ -6,4 +6,4 @@ startup_message off		# Don't display the copyright page
 
 vbell off			# tab-completion flash in heading bar
 
-defscrollback 30000		# Use a 30000-line scrollback buffer
+defscrollback 2000		# Use a 2000-line scrollback buffer
