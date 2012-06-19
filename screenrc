@@ -7,3 +7,7 @@ startup_message off		# Don't display the copyright page
 vbell off			# tab-completion flash in heading bar
 
 defscrollback 2000		# Use a 2000-line scrollback buffer
+
+hardstatus on
+hardstatus alwayslastline
+hardstatus string "%{kw}%?%-Lw%?%{bw}%n*%f %t%?(%u)%?%{kw}%?%+Lw%?"
