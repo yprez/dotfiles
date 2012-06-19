@@ -1,0 +1,14 @@
+[user]
+	name = Yuri Prezument
+	email = y@yprez.com
+[github]
+	user = yprez
+[core]
+	editor = nano
+[alias]
+	hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+[merge]
+	summary = true
+	tool = "meld"
+[color]
+        ui = auto
