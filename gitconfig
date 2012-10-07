@@ -7,8 +7,9 @@
 	editor = nano
 [alias]
 	hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+	todo = grep -n -e TODO -e FIXME -e XXX -e OPTIMIZE
 [merge]
 	summary = true
 	tool = "meld"
 [color]
-        ui = auto
+	ui = auto
