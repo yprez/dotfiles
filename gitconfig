@@ -11,5 +11,7 @@
 [merge]
 	summary = true
 	tool = "meld"
+[push]
+        default = simple
 [color]
 	ui = auto
