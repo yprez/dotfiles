@@ -1,21 +1,21 @@
 [user]
-	name = Yuri Prezument
-	email = y@yprez.com
+    name = Yuri Prezument
+    email = y@yprez.com
 [github]
-	user = yprez
+    user = yprez
 [core]
-	editor = nano
+    editor = nano
 [alias]
-	hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
-	todo = grep -n -e TODO -e FIXME -e XXX -e OPTIMIZE -e NOTE
-	branch-to-tag = !"git tag archive/$1 $1 ; git branch -D $1"  #; git push origin $1 --delete ; git push --tags"
-	clean-branches = !"git branch --merged master | grep -v \\* | grep -v master | xargs --verbose --no-run-if-empty git branch -d && \
-		git branch -r --merged master | grep -v master | grep origin | cut -d/ -f 2 | xargs --verbose --no-run-if-empty git push origin --delete"
-	add-nowhitespace = !"git diff -w --no-color | git apply --cached --ignore-whitespace"
+    hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+    todo = grep -n -e TODO -e FIXME -e XXX -e OPTIMIZE -e NOTE
+    branch-to-tag = !"git tag archive/$1 $1 ; git branch -D $1"  #; git push origin $1 --delete ; git push --tags"
+    clean-branches = !"git branch --merged master | grep -v \\* | grep -v master | xargs --verbose --no-run-if-empty git branch -d && \
+        git branch -r --merged master | grep -v master | grep origin | cut -d/ -f 2 | xargs --verbose --no-run-if-empty git push origin --delete"
+    add-nowhitespace = !"git diff -w --no-color | git apply --cached --ignore-whitespace"
 [merge]
-	summary = true
-	tool = "meld"
+    summary = true
+    tool = "meld"
 [push]
-        default = simple
+    default = simple
 [color]
-	ui = auto
+    ui = auto
