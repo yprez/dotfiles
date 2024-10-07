@@ -9,8 +9,18 @@
     hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
     todo = grep -n -e TODO -e FIXME -e XXX -e OPTIMIZE -e NOTE
     branch-to-tag = !"git tag archive/$1 $1 ; git branch -D $1"  #; git push origin $1 --delete ; git push --tags"
-    clean-branches = !"git branch --merged master | grep -v \\* | grep -v master | xargs --verbose --no-run-if-empty git branch -d && \
-        git branch -r --merged master | grep -v master | grep origin | cut -d/ -f 2 | xargs --verbose --no-run-if-empty git push origin --delete"
+    clean-branches = "!base=${1:-main}; \
+        git fetch --prune && \
+        git branch --merged $base | grep -v -E \"\\*|$base|production|staging\" | \
+        xargs --verbose --no-run-if-empty -p git branch -d && \
+        git branch -r --merged $base | grep -v -E \"$base|production|staging\" | \
+        grep origin | cut -d/ -f 2 | \
+        xargs --verbose --no-run-if-empty -p git push origin --delete"
+    orphan-branches = "!git fetch --prune && \
+        git branch -vv | grep ': gone]' | awk '{print $1}'"
+    clean-orphan-branches = "!git fetch --prune && \
+        git branch -vv | grep ': gone]' | awk '{print $1}' | \
+        xargs --verbose --no-run-if-empty git branch -D"
     add-nowhitespace = !"git diff -w --no-color | git apply --cached --ignore-whitespace"
     pr = !sh -c \"git fetch upstream pull/${1}/head:pr/${1} && git checkout pr/${1}\"
 [merge]
@@ -18,5 +28,9 @@
     tool = "meld"
 [push]
     default = simple
+    autosetupremote = true
 [color]
     ui = auto
+[init]
+    defaultBranch = main
+
