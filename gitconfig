@@ -11,9 +11,9 @@
     branch-to-tag = !"git tag archive/$1 $1 ; git branch -D $1"  #; git push origin $1 --delete ; git push --tags"
     clean-branches = "!base=${1:-main}; \
         git fetch --prune && \
-        git branch --merged $base | grep -v -E \"\\*|$base|production|staging\" | \
+        git branch --merged $base | grep -v -E \"\\*|$main|master\" | \
         xargs --verbose --no-run-if-empty -p git branch -d && \
-        git branch -r --merged $base | grep -v -E \"$base|production|staging\" | \
+        git branch -r --merged $base | grep -v -E \"$main|master\" | \
         grep origin | cut -d/ -f 2 | \
         xargs --verbose --no-run-if-empty -p git push origin --delete"
     orphan-branches = "!git fetch --prune && \
