@@ -28,7 +28,7 @@
     tool = "meld"
 [push]
     default = simple
-    autosetupremote = true
+    autoSetupRemote = true
 [color]
     ui = auto
 [init]
